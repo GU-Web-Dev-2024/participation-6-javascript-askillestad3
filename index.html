@@ -78,6 +78,16 @@
             // if first guess is incorrect, add to attempt counter
             attempts++;
 
+            // check guess is too high or too low
+            if (playerGuess === randomNumber) {
+                displayMessage("Congratulations! You guessed correctly.");
+                document.getElementById('guess-button').disabled = true; // Disable button after correct guess
+            } else if (playerGuess > randomNumber) {
+                displayMessage("Your guess is too high.");
+            } else if (playerGuess < randomNumber) {
+                displayMessage("Your guess is too low.");
+            }
+
         }
 
         // check player's second guess
