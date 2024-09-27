@@ -67,6 +67,16 @@
 
         // check player's first guess
         function checkGuess() {
+            const guessInput = document.getElementById('guess-input');
+            const playerGuess = parseInt(guessInput.value);
+
+            if (isNaN(playerGuess) || playerGuess < 1 || playerGuess > 10) {
+                displayMessage("Please enter a number between 1 and 10.");
+                return;
+            }
+
+            // if first guess is incorrect, add to attempt counter
+            attempts++;
 
         }
 
