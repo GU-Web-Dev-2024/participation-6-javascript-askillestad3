@@ -40,7 +40,7 @@
 
         <div>
             <label for="guess-input">Guess:</label>
-            <input type="number" id="guess-input" min="1" max="10" placeholder="Enter your guess">
+            <input type="number" id="guess-input" min="1" max="10" placeholder="Enter guess here">
         </div>
 
         <div>
@@ -100,8 +100,8 @@
 
         // TODO: Add a click listener to the button (will be covered more in zyBook 7.4)
         // Example: document.getElementById('guess-button').addEventListener('click', function() { ... });
-        document.getElementById('guess-button').addEventListener('click', checkGuess);
-        
+        document.getElementById('guess-button').addEventListener('click', checkGuess());
+
     </script>
 </body>
 
