@@ -54,7 +54,7 @@
     </div>
 
     <script>
-        // JavaScript code goes here   
+        // JavaScript code goes here
         // Generate a number 1-10
         const randomNumber = Math.floor(Math.random() * 10) + 1;
         let attempts = 0;
@@ -81,27 +81,27 @@
             // check guess is too high or too low
             if (playerGuess === randomNumber) {
                 displayMessage("Congratulations! You guessed correctly.");
-                document.getElementById('guess-button').disabled = true; // Disable button after correct guess
+                document.getElementById('guess-button').disabled = true;
             } else if (playerGuess > randomNumber) {
                 displayMessage("Your guess is too high.");
             } else if (playerGuess < randomNumber) {
                 displayMessage("Your guess is too low.");
             }
 
+            // check if player still has attempts left
+            if (attempts === maxAttempts && playerGuess !== randomNumber) {
+                displayMessage(`Game Over! The correct number was ${randomNumber}.`);
+                document.getElementById('guess-button').disabled = true;
+            }
+
+            // Clear the input field for the next guess
+            guessInput.value = '';
         }
-
-        // check player's second guess
-
-
-        // check player's third and final guess
-
-
-
 
         // TODO: Add a click listener to the button (will be covered more in zyBook 7.4)
         // Example: document.getElementById('guess-button').addEventListener('click', function() { ... });
-
-
+        document.getElementById('guess-button').addEventListener('click', checkGuess);
+        
     </script>
 </body>
 
